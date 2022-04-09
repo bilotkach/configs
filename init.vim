@@ -9,8 +9,8 @@
 :syntax on
 :colorscheme torte
 
-call plug#begin()
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
+call plug#begin() 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'https://github.com/sharkdp/fd'
 Plug 'https://github.com/BurntSushi/ripgrep'
@@ -20,8 +20,11 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'numToStr/Comment.nvim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
+Plug 'bluz71/vim-moonfly-colors'
+Plug 'shaeinst/roshnivim-cs'
 call plug#end()
 
+colorscheme rvcs
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
@@ -38,7 +41,7 @@ require'nvim-treesitter.configs'.setup {
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
+    additional_vim_regex_highlighting = true,
   },
 }
 EOF
@@ -47,7 +50,7 @@ lua << END
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'powerline_dark',
+    theme = 'horizon',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
@@ -56,7 +59,7 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'buffers'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
     lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},

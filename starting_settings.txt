@@ -1,5 +1,0 @@
-sudo snap install nvim --classic
-sudo snap install code --classic
-sudo snap install pycharm-community --classic
-sudo snap install sublime-text --classic
-
