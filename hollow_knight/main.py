@@ -37,7 +37,10 @@ for name in bosses.index:
        insert_data += f',{val}'
    insert_data += '),'
 insert_data = insert_data[:-1] + ';'
+
 # Insert data to db
 db.execute_query(conn, insert_data)
+
+
 # bosses.to_csv('out.csv')
 # print(bosses)
